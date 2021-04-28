@@ -1,5 +1,7 @@
+require_relative '../bin/main.rb'
+
 module Game
-  def self.start
+  def self.start(grid)
     system 'clear'
     arr = [
       [1, 2, 3],
@@ -14,32 +16,18 @@ end
 # Players class
 class Player
   include Game
-  attr_reader :name
+  attr_reader :name1, :name2
 
-  def initialize(name)
-    @name = name
+  def initialize(name1, name2)
+    @name1 = name1
+    @name2 = name2
   end
 end
-
-player1 = Player.new(name1)
-player2 = Player.new(name2)
 
 clear = lambda {
   system 'clear'
 }
 
-
-while name1.empty?
-  puts 'Please, give me your name'
-  name1 = gets.chomp
-end
-
-while name2.empty?
-  puts 'Please, give me your name'
-  name2 = gets.chomp
-end
-
-player = Player.new(name1, name2)
 Game.start
 
 puts "#{player.name1} is going to play X and #{player.name2} will play 0"
