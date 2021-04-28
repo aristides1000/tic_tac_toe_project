@@ -2,6 +2,8 @@
 
 require '../lib/logic.rb'
 
+puts "Welcome to the Tic Tac Toe's Game \n \n"
+
 puts 'Player 1 name: '
 name1 = gets.chomp
 while name1.empty?
