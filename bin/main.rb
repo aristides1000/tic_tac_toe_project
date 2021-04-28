@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-puts 'Hello World!'
+# puts 'Hello World!'
 module Game
 
     def self.start
@@ -19,23 +19,28 @@ module Game
   # Players class
   class Player
     include Game
-    attr_accessor :name, :symbol
+    attr_accessor :name
   
     def initialize
-      puts "Player name: "
-      @name = gets.chomp
-      puts "Select your marker: "
-      @symbol = gets.chomp
+      puts "Player 1 name: "
+      @name1 = gets.chomp  
+      puts "Player 2 name: "
+      @name2 = gets.chomp
+    end
+
+    def name1
+        @name1
+    end
+
+    def name2
+        @name2
     end
   end
   
   
   
-  player1 = Player.new
-  player2 = Player.new
+  player = Player.new
   Game.start
   
-  puts "#{player1.name} is your turn, select one of the numbers above to place your marker: "
-  
-  answer = gets.chomp
-  
+  puts "#{player.name1} is going to play X and #{player.name2} will play 0"
+    
