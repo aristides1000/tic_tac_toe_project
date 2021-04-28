@@ -1,7 +1,6 @@
-require_relative '../bin/main.rb'
 
 module Game
-  def self.start(grid)
+  def self.start
     system 'clear'
     arr = [
       [1, 2, 3],
@@ -30,11 +29,8 @@ clear = lambda {
 
 Game.start
 
-puts "#{player.name1} is going to play X and #{player.name2} will play 0"
-sleep(1)
-puts "Let's start"
-sleep(2)
 
+=begin
 game_loop = lambda {
   clear.call
   Game.start
@@ -84,3 +80,4 @@ when 1
 else
   puts "It's a TIE \n \n Game over"
 end
+=end
