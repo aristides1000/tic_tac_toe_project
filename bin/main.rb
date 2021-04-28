@@ -53,26 +53,26 @@ module Game
   puts "It's #{player.name1}'s turn \n"
   sleep(1)
   puts "Please select an available cell from the board"
-  select_player1 = gets.chomp
   range = (1..9)
-  while select_player1 != range
+  select_player1 = gets.chomp.to_i
+  while !range.include? select_player1
     puts "Invalid move, Please select a number between 1 to 9."
+    puts "you put #{select_player1} #{select_player1.class}"
     sleep(1)
-    p select_player1
+    puts "Please select an available cell from the board"
     select_player1 = gets.chomp.to_i
-    p select_player1
   end
   clear.call
   Game.start
   puts "It's #{player.name2}'s turn \n"
   sleep(1)
   puts "Please select an available cell from the board"
-  select_player2 = gets.chomp
   range = (1..9)
-  while select_player2 != range
-    puts "Invalid move, Please select a number between 1 to 9."
+  select_player2 = gets.chomp.to_i
+  while !range.include? select_player2
     sleep(1)
-    select_player2 = gets.chomp
+    puts "Please select an available cell from the board"
+    select_player2 = gets.chomp.to_i
   end
   clear.call
   Game.start
