@@ -23,54 +23,85 @@ end
 # Players class
 class Player
   include Game
-  attr_accessor :name
-
-  def initialize
-    puts 'Player 1 name: '
-    @name1 = gets.chomp
-    puts 'Player 2 name: '
-    @name2 = gets.chomp
-  end
-
   attr_reader :name1, :name2
+
+  def initialize(name1, name2)
+    @name1 = name1
+    @name2 = name2
+  end
 end
 
 clear = lambda {
   system 'clear'
 }
 
-player = Player.new
+puts 'Player 1 name: '
+name1 = gets.chomp
+while name1.empty?
+  puts 'Please, give me your name'
+  name1 = gets.chomp
+end
+puts 'Player 2 name: '
+name2 = gets.chomp
+while name2.empty?
+  puts 'Please, give me your name'
+  name2 = gets.chomp
+end
+
+player = Player.new(name1, name2)
 Game.start
 
 puts "#{player.name1} is going to play X and #{player.name2} will play 0"
 sleep(1)
 puts "Let's start"
 sleep(2)
-clear.call
-Game.start
-puts "It's #{player.name1}'s turn \n"
-sleep(1)
-puts 'Please select an available cell from the board'
-range = (1..9)
-select_player1 = gets.chomp.to_i
-until range.include? select_player1
-  puts 'Invalid move, Please select a number between 1 to 9.'
-  puts "you put #{select_player1} #{select_player1.class}"
+
+game_loop = lambda {
+  clear.call
+  Game.start
+  puts "It's #{player.name1}'s turn \n"
   sleep(1)
   puts 'Please select an available cell from the board'
+  range = (1..9)
   select_player1 = gets.chomp.to_i
-end
-clear.call
-Game.start
-puts "It's #{player.name2}'s turn \n"
-sleep(1)
-puts 'Please select an available cell from the board'
-range = (1..9)
-select_player2 = gets.chomp.to_i
-until range.include? select_player2
+  until range.include? select_player1
+    puts 'Invalid move, Please select a number between 1 to 9.'
+    puts "you put #{select_player1} #{select_player1.class}"
+    sleep(1)
+    puts 'Please select an available cell from the board'
+    select_player1 = gets.chomp.to_i
+  end
+  clear.call
+  Game.start
+  puts "It's #{player.name2}'s turn \n"
   sleep(1)
   puts 'Please select an available cell from the board'
+  range = (1..9)
   select_player2 = gets.chomp.to_i
+  until range.include? select_player2
+    sleep(1)
+    puts 'Please select an available cell from the board'
+    select_player2 = gets.chomp.to_i
+  end
+}
+
+i = 0
+
+while i < 3
+  game_loop.call
+  i += 1
 end
+
 clear.call
 Game.start
+
+win_lose = rand(0...2)
+
+case win_lose
+when 0
+  puts "#{player.name1} you Win the Game"
+when 1
+  puts "#{player.name2} you Win the Game"
+else
+  puts "It's a TIE \n \n Game over"
+end
