@@ -83,7 +83,7 @@ game_loop = lambda {
     puts 'Please select an available cell from the board'
     select_player2 = gets.chomp.to_i
   end
-} 
+}
 
 i = 0
 
