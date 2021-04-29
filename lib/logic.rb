@@ -1,4 +1,3 @@
-
 module Game
   def self.start
     arr = [
@@ -34,18 +33,6 @@ class Rules
   def iterations
 
     game_on = true
-
-=begin
-# initial instructions for player
-
-while game_on
-  # loop for each move
-
-  if winner # and/or draw (the exact condition in this milestone is not important)
-    game_on = false
-  end
-end
-=end
 
   end
 end
