@@ -36,6 +36,9 @@ game_on = true
 @array_select_player1 = []
 @array_select_player2 = []
 
+@array_winner = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+
+=begin
 @array_winner1 = [1, 2, 3]
 @array_winner2 = [4, 5, 6]
 @array_winner3 = [7, 8, 9]
@@ -44,6 +47,7 @@ game_on = true
 @array_winner6 = [3, 6, 9]
 @array_winner7 = [1, 5, 9]
 @array_winner8 = [3, 5, 7]
+=end
 
 j = 1
 
@@ -109,20 +113,59 @@ while j < 10
     return
   end
 
-  array1 = [1, 4, 8, 9]
-  array2 = 1
-
-  p array1.include? array2
-  sleep(1)
 =begin
-  if @array_select_player1.all? @array_winner1 or @array_select_player1.all? @array_winner2 or @array_select_player1.all? @array_winner3 or @array_select_player1.all? @array_winner4 or @array_select_player1.all? @array_winner5 or @array_select_player1.include? @array_winner6 or @array_select_player1.include? @array_winner7 or @array_select_player1.include? @array_winner8
+  array1 = [1, 4, 8, 9]
+  array2 = [1, 8]
+  array3 = [2, 5]
+
+  if (array1.include? array2[0] and array1.include? array2[1]) or (array1.include? array3[0] and array1.include? array3[1])
+    puts "entre aquí"
+  else
+    puts "No entré aquí"
+  end
+  sleep(1)
+=end
+
+=begin
+  if (@array_select_player1.include? @array_winner1[0] and @array_select_player1.include? @array_winner1[1] and @array_select_player1.include? @array_winner1[2]) or (@array_select_player1.include? @array_winner2[0] and @array_select_player1.include? @array_winner2[1] and @array_select_player1.include? @array_winner2[2]) or (@array_select_player1.include? @array_winner3[0] and @array_select_player1.include? @array_winner3[1] and @array_select_player1.include? @array_winner3[2]) or (@array_select_player1.include? @array_winner4[0] and @array_select_player1.include? @array_winner4[1] and @array_select_player1.include? @array_winner4[2]) or (@array_select_player1.include? @array_winner5[0] and @array_select_player1.include? @array_winner5[1] and @array_select_player1.include? @array_winner5[2]) or (@array_select_player1.include? @array_winner6[0] and @array_select_player1.include? @array_winner6[1] and @array_select_player1.include? @array_winner6[2]) or (@array_select_player1.include? @array_winner7[0] and @array_select_player1.include? @array_winner7[1] and @array_select_player1.include? @array_winner7[2]) or (@array_select_player1.include? @array_winner8[0] and @array_select_player1.include? @array_winner8[1] and @array_select_player1.include? @array_winner8[2])
     puts "#{player.name1} you Win the Game"
     return
-  elsif @array_select_player2.include? @array_winner1 or @array_select_player2.include? @array_winner2 or @array_select_player2.include? @array_winner3 or @array_select_player2.include? @array_winner4 or @array_select_player2.include? @array_winner5 or @array_select_player2.include? @array_winner6 or @array_select_player2.include? @array_winner7 or @array_select_player2.include? @array_winner8
+  elsif (@array_select_player2.include? @array_winner1[0] and @array_select_player2.include? @array_winner1[1] and @array_select_player2.include? @array_winner1[2]) or (@array_select_player2.include? @array_winner2[0] and @array_select_player2.include? @array_winner2[1] and @array_select_player2.include? @array_winner2[2]) or (@array_select_player2.include? @array_winner3[0] and @array_select_player2.include? @array_winner3[1] and @array_select_player2.include? @array_winner3[2]) or (@array_select_player2.include? @array_winner4[0] and @array_select_player2.include? @array_winner4[1] and @array_select_player2.include? @array_winner4[2]) or (@array_select_player2.include? @array_winner5[0] and @array_select_player2.include? @array_winner5[1] and @array_select_player2.include? @array_winner5[2]) or (@array_select_player2.include? @array_winner6[0] and @array_select_player2.include? @array_winner6[1] and @array_select_player2.include? @array_winner6[2]) or (@array_select_player2.include? @array_winner7[0] and @array_select_player2.include? @array_winner7[1] and @array_select_player2.include? @array_winner7[2]) or (@array_select_player2.include? @array_winner8[0] and @array_select_player2.include? @array_winner8[1] and @array_select_player2.include? @array_winner8[2])
     puts "#{player.name2} you Win the Game"
     return
   end
 =end
+
+x = 0
+#y = 0
+
+#p @array_winner[0][0]
+
+while x < 8
+  if @array_select_player1.include? @array_winner[x][0] and
+    @array_select_player1.include? @array_winner[x][1] and
+    @array_select_player1.include? @array_winner[x][2]
+      puts "#{player.name1} you Win the Game"
+  elsif @array_select_player2.include? @array_winner[x][0] and
+    @array_select_player2.include? @array_winner[x][1] and
+    @array_select_player2.include? @array_winner[x][2]
+    puts "#{player.name2} you Win the Game"
+  end
+=begin
+  while y < 3
+    # p @array_winner[x][y]
+    if @array_select_player1.include? @array_winner[x][0] and
+      @array_select_player1.include? @array_winner[x][1] and
+      @array_select_player1.include? @array_winner[x][2]
+    sleep(1)
+
+    y +=1
+  end
+  y = 0
+
+=end
+  x += 1
+end
 
   j += 1
 
