@@ -151,7 +151,7 @@ while j < 10
   puts grid
   puts "It's a TIE \n \n Game over"
   return
-
+ 
 end
 
 # rubocop: enable Lint/UselessAssignment
