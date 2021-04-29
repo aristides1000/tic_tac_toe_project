@@ -1,7 +1,6 @@
 
 module Game
   def self.start
-    system 'clear'
     arr = [
       [1, 2, 3],
       [4, 5, 6],
@@ -23,61 +22,30 @@ class Player
   end
 end
 
-clear = lambda {
-  system 'clear'
-}
+class Rules
+  include Game
+  attr_writer :select_player1, :select_player2
 
-Game.start
+  def initialize(select_player1, select_player2)
+    @select_player1 = select_player1
+    @select_player2 = select_player2
+  end
 
+  def iterations
+
+    game_on = true
 
 =begin
-game_loop = lambda {
-  clear.call
-  Game.start
-  puts "It's #{player.name1}'s turn \n"
-  sleep(1)
-  puts 'Please select an available cell from the board'
-  range = (1..9)
-  select_player1 = gets.chomp.to_i
-  until range.include? select_player1
-    puts 'Invalid move, Please select a number between 1 to 9.'
-    puts "you put #{select_player1} #{select_player1.class}"
-    sleep(1)
-    puts 'Please select an available cell from the board'
-    select_player1 = gets.chomp.to_i
+# initial instructions for player
+
+while game_on
+  # loop for each move
+
+  if winner # and/or draw (the exact condition in this milestone is not important)
+    game_on = false
   end
-  clear.call
-  Game.start
-  puts "It's #{player.name2}'s turn \n"
-  sleep(1)
-  puts 'Please select an available cell from the board'
-  range = (1..9)
-  select_player2 = gets.chomp.to_i
-  until range.include? select_player2
-    sleep(1)
-    puts 'Please select an available cell from the board'
-    select_player2 = gets.chomp.to_i
-  end
-}
-
-i = 0
-
-while i < 3
-  game_loop.call
-  i += 1
-end
-
-clear.call
-Game.start
-
-win_lose = rand(0...2)
-
-case win_lose
-when 0
-  puts "#{player.name1} you Win the Game"
-when 1
-  puts "#{player.name2} you Win the Game"
-else
-  puts "It's a TIE \n \n Game over"
 end
 =end
+
+  end
+end
