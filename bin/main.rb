@@ -33,8 +33,8 @@ while name2.empty?
   name2 = gets.chomp.capitalize!
 end
 
-player1 = Player.new(name1, marker = 'X')
-player2 = Player.new(name2, marker = 'O')
+player1 = Player.new(name1, 'X')
+player2 = Player.new(name2, 'O')
 
 system 'clear'
 puts grid
@@ -58,7 +58,7 @@ str2 = "It's #{player2.name}'s turn #{player2.marker}\n"
 while j < 10
   system 'clear'
   puts grid
-  puts PlayerT.turn(j,str1, str2)
+  puts PlayerT.turn(j, str1, str2)
   sleep(1)
   puts 'Please select an available cell from the board'
   range = (1..9)
@@ -114,14 +114,11 @@ while j < 10
 
   string1 = "#{player1.name} you Win the Game"
   string2 = "#{player1.name} you Win the Game"
-  win = false
 
   system 'clear'
   puts grid
 
-  if Rules.win(array_select_player1, array_select_player2, array_winner, string1, string2, win) == true
-    break
-  end
+  break if Rules.win(array_select_player1, array_select_player2, array_winner, string1, string2) == true
 
   j += 1
 

@@ -15,7 +15,4 @@ module PlayerT
       str2
     end
   end
-
 end
-
-
