@@ -6,3 +6,16 @@ class Player
     @marker = marker
   end
 end
+
+module PlayerT
+  def self.turn(init, str1, str2)
+    if init.odd?
+      str1
+    else
+      str2
+    end
+  end
+
+end
+
+

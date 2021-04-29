@@ -53,16 +53,13 @@ sleep(1)
 @array_winner = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
 
 j = 1
+str1 = "It's #{player1.name}'s turn #{player1.marker}\n"
+str2 = "It's #{player2.name}'s turn #{player2.marker}\n"
 
 while j < 10
   system 'clear'
   puts grid
-  if j.odd?
-    puts "It's #{player1.name}'s turn #{player1.marker}\n"
-  else
-    puts "It's #{player2.name}'s turn #{player2.marker} \n"
-  end
-
+  puts PlayerT.turn(j,str1, str2)
   sleep(1)
   puts 'Please select an available cell from the board'
   range = (1..9)
