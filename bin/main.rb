@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # rubocop: disable Lint/UselessAssignment
 
-require_relative '../lib/player.rb'
-require_relative '../lib/rules.rb'
-require_relative '../lib/board.rb'
+require_relative '../lib/player'
+require_relative '../lib/rules'
+require_relative '../lib/board'
 
 # board layout
 arr = [
