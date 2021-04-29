@@ -17,16 +17,12 @@ class Rules
          @array_select_player1.include? @array_winner[x][1] and
          @array_select_player1.include? @array_winner[x][2]
         puts @string1
-        win = 1
-        sleep(5)
-        break
+        return true
       elsif @array_select_player2.include? @array_winner[x][0] and
         @array_select_player2.include? @array_winner[x][1] and
         @array_select_player2.include? @array_winner[x][2]
         puts @string2
-        win = 1
-        sleep(5)
-        break
+        return true
       end
       x += 1
     end

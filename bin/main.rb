@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# rubocop: disable Lint/UselessAssignment
 
 require_relative '../lib/player'
 require_relative '../lib/rules'
@@ -113,40 +112,16 @@ while j < 10
     array_select_player2.push(select_player2)
   end
 
-=begin
-  x = 0
-
-  while x < 8
-    if @array_select_player1.include? @array_winner[x][0] and
-       @array_select_player1.include? @array_winner[x][1] and
-       @array_select_player1.include? @array_winner[x][2]
-      system 'clear'
-      puts grid
-      puts "#{player1.name} you Win the Game"
-      return
-    elsif @array_select_player2.include? @array_winner[x][0] and
-          @array_select_player2.include? @array_winner[x][1] and
-          @array_select_player2.include? @array_winner[x][2]
-      system 'clear'
-      puts grid
-      puts "#{player2.name} you Win the Game"
-      return
-    end
-
-    x += 1
-  end
-=end
-
   string1 = "#{player1.name} you Win the Game"
   string2 = "#{player1.name} you Win the Game"
-  win = 0
+  win = false
 
   system 'clear'
   puts grid
-  puts Rules.win(array_select_player1, array_select_player2, array_winner, string1, string2, win)
 
-  puts win
-  sleep(1)
+  if Rules.win(array_select_player1, array_select_player2, array_winner, string1, string2, win) == true
+    break
+  end
 
   j += 1
 
@@ -158,5 +133,3 @@ while j < 10
   return
 
 end
-
-# rubocop: enable Lint/UselessAssignment
