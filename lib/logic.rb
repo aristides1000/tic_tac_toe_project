@@ -15,11 +15,11 @@ end
 # Players class
 class Player
   include Game
-  attr_reader :name1, :name2
+  attr_reader :name, :marker
 
-  def initialize(name1, name2)
-    @name1 = name1
-    @name2 = name2
+  def initialize(name, marker)
+    @name = name
+    @marker = marker
   end
 end
 
@@ -30,6 +30,16 @@ class Rules
   def initialize(select_player1, select_player2)
     @select_player1 = select_player1
     @select_player2 = select_player2
+  end
+end
+
+class Board
+  def self.check(arr, answer, marker)
+    arr.each { |item|
+    item.each_with_index { |num, idx|
+      item[idx] = marker if answer == item[idx] } 
+    }
+    arr
   end
 end
 
