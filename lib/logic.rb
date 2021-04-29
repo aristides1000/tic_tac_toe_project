@@ -29,10 +29,4 @@ class Rules
     @select_player1 = select_player1
     @select_player2 = select_player2
   end
-
-  def iterations
-
-    game_on = true
-
-  end
 end
