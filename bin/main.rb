@@ -137,9 +137,9 @@ while j < 10
 =end
 
 x = 0
-y = 0
+# y = 0
 
-p @array_winner[0][3]
+# p @array_winner[0][3]
 
 while x < 8
   if @array_select_player1.include? @array_winner[x][0] and
