@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
+# rubocop: disable Layout/LineLength
+# rubocop: disable Lint/UselessAssignment
 
 require_relative '../lib/logic'
 
-# board layout 
+# board layout
 arr = [
   [1, 2, 3],
   [4, 5, 6],
@@ -19,7 +21,7 @@ puts 'Player 1 name: '
 name1 = gets.chomp.capitalize!
 while name1.empty?
   puts 'Please, give me your name'
-  name1= gets.chomp.capitalize!
+  name1 = gets.chomp.capitalize!
 end
 puts 'Player 2 name: '
 name2 = gets.chomp.capitalize!
@@ -77,8 +79,8 @@ while j < 10
       puts 'Please select an available cell from the board'
       select_player1 = gets.chomp.to_i
     end
-  Board.check(arr,select_player1,player1.marker)
-  grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
+    Board.check(arr, select_player1, player1.marker)
+    grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
     @array_select_player1.push(select_player1)
   else
 
@@ -97,7 +99,7 @@ while j < 10
       puts 'Please select an available cell from the board'
       select_player2 = gets.chomp.to_i
     end
-    Board.check(arr,select_player2,player2.marker)
+    Board.check(arr, select_player2, player2.marker)
     grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
     @array_select_player2.push(select_player2)
   end
@@ -113,14 +115,14 @@ while j < 10
     if @array_select_player1.include? @array_winner[x][0] and
        @array_select_player1.include? @array_winner[x][1] and
        @array_select_player1.include? @array_winner[x][2]
-      system "clear"
+      system 'clear'
       puts grid
       puts "#{player1.name} you Win the Game"
       return
     elsif @array_select_player2.include? @array_winner[x][0] and
           @array_select_player2.include? @array_winner[x][1] and
           @array_select_player2.include? @array_winner[x][2]
-      system "clear"
+      system 'clear'
       puts grid
       puts "#{player2.name} you Win the Game"
       return
@@ -131,11 +133,14 @@ while j < 10
 
   j += 1
 
-  if j == 10
-    system "clear"
-    puts grid
-    puts "It's a TIE \n \n Game over"
-    return
-  end
+  next unless j == 10
+
+  system 'clear'
+  puts grid
+  puts "It's a TIE \n \n Game over"
+  return
 
 end
+
+# rubocop: enable Layout/LineLength
+# rubocop: enable Lint/UselessAssignment
