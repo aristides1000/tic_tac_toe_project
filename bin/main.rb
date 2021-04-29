@@ -1,9 +1,8 @@
-#!/usr/bin/env ruby
+# !/usr/bin/env ruby
 
 require_relative '../lib/logic'
 
 puts "Welcome to the Tic Tac Toe's Game \n \n"
-
 
 puts 'Player 1 name: '
 name1 = gets.chomp.capitalize!
