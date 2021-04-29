@@ -137,19 +137,21 @@ while j < 10
 =end
 
 x = 0
-#y = 0
+y = 0
 
-#p @array_winner[0][0]
+p @array_winner[0][3]
 
 while x < 8
   if @array_select_player1.include? @array_winner[x][0] and
     @array_select_player1.include? @array_winner[x][1] and
     @array_select_player1.include? @array_winner[x][2]
       puts "#{player.name1} you Win the Game"
+      return
   elsif @array_select_player2.include? @array_winner[x][0] and
     @array_select_player2.include? @array_winner[x][1] and
     @array_select_player2.include? @array_winner[x][2]
-    puts "#{player.name2} you Win the Game"
+      puts "#{player.name2} you Win the Game"
+      return
   end
 =begin
   while y < 3
