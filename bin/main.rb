@@ -47,10 +47,10 @@ sleep(1)
 
 # initial instructions for player
 
-@array_select_player1 = []
-@array_select_player2 = []
+array_select_player1 = []
+array_select_player2 = []
 
-@array_winner = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+array_winner = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
 
 j = 1
 str1 = "It's #{player1.name}'s turn #{player1.marker}\n"
@@ -74,7 +74,7 @@ while j < 10
       select_player1 = gets.chomp.to_i
     end
 
-    while @array_select_player1.include? select_player1 or @array_select_player2.include? select_player1
+    while array_select_player1.include? select_player1 or array_select_player2.include? select_player1
       puts 'Please Type another number, because this number is already taken'
       sleep(1)
       puts 'Please select an available cell from the board'
@@ -86,7 +86,7 @@ while j < 10
     line2 = "\n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n"
     line3 = "\n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n"
     grid = line_separator + line1 + line_separator + line2 + line_separator + line3 + line_separator
-    @array_select_player1.push(select_player1)
+    array_select_player1.push(select_player1)
   else
 
     select_player2 = gets.chomp.to_i
@@ -98,7 +98,7 @@ while j < 10
       select_player2 = gets.chomp.to_i
     end
 
-    while @array_select_player1.include? select_player2 or @array_select_player2.include? select_player2
+    while array_select_player1.include? select_player2 or array_select_player2.include? select_player2
       puts 'Please Type another number, because this number is already taken'
       sleep(1)
       puts 'Please select an available cell from the board'
@@ -110,14 +110,10 @@ while j < 10
     line2 = "\n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n"
     line3 = "\n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n"
     grid = line_separator + line1 + line_separator + line2 + line_separator + line3 + line_separator
-    @array_select_player2.push(select_player2)
+    array_select_player2.push(select_player2)
   end
 
-  if @array_select_player1.include? 1 and @array_select_player1.include? 2 and @array_select_player1.include? 3
-    puts "#{player1.name} you Win the Game"
-    return
-  end
-
+=begin
   x = 0
 
   while x < 8
@@ -139,6 +135,18 @@ while j < 10
 
     x += 1
   end
+=end
+
+  string1 = "#{player1.name} you Win the Game"
+  string2 = "#{player1.name} you Win the Game"
+  win = 0
+
+  system 'clear'
+  puts grid
+  puts Rules.win(array_select_player1, array_select_player2, array_winner, string1, string2, win)
+
+  puts win
+  sleep(1)
 
   j += 1
 
