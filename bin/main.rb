@@ -4,25 +4,24 @@ require_relative '../lib/logic'
 
 puts "Welcome to the Tic Tac Toe's Game \n \n"
 
+
 puts 'Player 1 name: '
-name1 = gets.chomp
+name1 = gets.chomp.capitalize!
 while name1.empty?
   puts 'Please, give me your name'
-  name1 = gets.chomp
+  name1 = gets.chomp.capitalize!
 end
 puts 'Player 2 name: '
-name2 = gets.chomp
+name2 = gets.chomp.capitalize!
 while name2.empty?
   puts 'Please, give me your name'
-  name2 = gets.chomp
+  name2 = gets.chomp.capitalize!
 end
 
 player = Player.new(name1, name2)
 
-grid = "+---+---+---+ \n| 1 | 2 | 3 | \n+---+---+---+ \n| 4 | 5 | 6 | \n+---+---+---+ \n| 7 | 8 | 9 | \n+---+---+---+"
-
 system 'clear'
-puts grid
+puts Game.start
 
 puts "#{player.name1} is going to play X and #{player.name2} will play 0"
 sleep(1)
@@ -40,8 +39,7 @@ j = 1
 
 while j < 10
   system 'clear'
-  puts grid
-
+  puts Game.start
   if j.odd?
     puts "It's #{player.name1}'s turn \n"
   else
