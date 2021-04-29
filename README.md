@@ -41,6 +41,22 @@ Run main.rb with [Ruby V.3.0.0](https://www.ruby-lang.org/es/downloads/).
 ### Run tests
 Linters errors
 
+## Game Description
+Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner
+
+## How to play
+1. The interface of this game will be your computer's terminal. Search terminal in your computer to open it.
+2. In the terminal, use the command `cd` to go to the place where you have saved/cloned the Tic Tac Toe repository. For example: Desktop/User/tic-tac-toe/. You may use the comand `ls` to see the files and repositories exitent in your current location.
+3. Now, use the comand `cd bin` again to enter the folder and execute `ruby main.rb` in the terminal to start the game.
+4. Enjoy the game!
+
+## Game rules
+1. Type the name of Player1, which will be signed to the symbol 'X';
+2. Type the name of Player2, which will be signed to the symbol 'O';
+3. Now the first player ('X') can select any space to insert the value, follow your number keyboard to compare the available spaces:
+4. Remember not to insert any invalid number (above 9) or repeat the same number that is already taken by a symbol (no cheating!!);
+5. The winner will be the first player/symbol to complete a sequence of a row, column, or diagonal.
+
 ## Authors
 
 👤 **Author**
