@@ -1,8 +1,5 @@
-# rubocop: disable Layout/LineLength
-
 # Players class
 class Player
-  include Game
   attr_reader :name, :marker
 
   def initialize(name, marker)
@@ -12,7 +9,6 @@ class Player
 end
 
 class Rules
-  include Game
   attr_writer :select_player1, :select_player2
 
   def initialize(select_player1, select_player2)
@@ -31,5 +27,3 @@ class Board
     arr
   end
 end
-
-# rubocop: enable Layout/LineLength

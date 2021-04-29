@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# rubocop: disable Layout/LineLength
 # rubocop: disable Lint/UselessAssignment
 
 require_relative '../lib/logic'
@@ -11,8 +10,11 @@ arr = [
   [7, 8, 9]
 ]
 
-grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
-
+line_separator = ' +---+---+---+ '
+line1 = "\n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n"
+line2 = "\n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n"
+line3 = "\n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n"
+grid = line_separator + line1 + line_separator + line2 + line_separator + line3 + line_separator
 # end of board layout
 
 puts "Welcome to the Tic Tac Toe's Game \n \n"
@@ -80,7 +82,11 @@ while j < 10
       select_player1 = gets.chomp.to_i
     end
     Board.check(arr, select_player1, player1.marker)
-    grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
+    line_separator = ' +---+---+---+ '
+    line1 = "\n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n"
+    line2 = "\n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n"
+    line3 = "\n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n"
+    grid = line_separator + line1 + line_separator + line2 + line_separator + line3 + line_separator
     @array_select_player1.push(select_player1)
   else
 
@@ -100,7 +106,11 @@ while j < 10
       select_player2 = gets.chomp.to_i
     end
     Board.check(arr, select_player2, player2.marker)
-    grid = " +---+---+---+ \n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n +---+---+---+ \n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n +---+---+---+ \n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n +---+---+---+"
+    line_separator = ' +---+---+---+ '
+    line1 = "\n | #{arr[0][0]} | #{arr[0][1]} | #{arr[0][2]} | \n"
+    line2 = "\n | #{arr[1][0]} | #{arr[1][1]} | #{arr[1][2]} | \n"
+    line3 = "\n | #{arr[2][0]} | #{arr[2][1]} | #{arr[2][2]} | \n"
+    grid = line_separator + line1 + line_separator + line2 + line_separator + line3 + line_separator
     @array_select_player2.push(select_player2)
   end
 
@@ -142,5 +152,4 @@ while j < 10
 
 end
 
-# rubocop: enable Layout/LineLength
 # rubocop: enable Lint/UselessAssignment
