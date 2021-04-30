@@ -3,7 +3,8 @@
 # Project - Tic Tac Toe
 
 > The purpose of this project is to consolidate the acquired knowledge of the Ruby programming language. For this, we decided to develop a Video Game development project called Tic Tac Toe, in order to learn the correct operation of Object Oriented Programming.
-> ![screenshot](./app_screenshot.png)
+
+![screenshot](./app_screenshot.png)
 
 This web page was the third Ruby Programming Language Project of the Microverse curriculum.
 In this project, we learned the importance of Object Oriented Programming in programming languages and how Ruby can help us accomplish this task.
