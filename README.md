@@ -12,10 +12,6 @@ In this project, we learned the importance of Object Oriented Programming in pro
 
 ![](<https://img.shields.io/badge/-Ruby-rgb(199%2C%2032%2C%2039)?style=plastic&logo=ruby>)
 
-## Live Demo
-
-[Live Demo Link](https://paiza.io/projects/Bik1h0kdcoJiVRlVLj7aJg/)
-
 ## Getting Started
 
 This project was created to study the importance of Object Oriented Programming and its application in Ruby.
