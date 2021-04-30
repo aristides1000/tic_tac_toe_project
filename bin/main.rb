@@ -113,7 +113,7 @@ while j < 10
   end
 
   string1 = "#{player1.name} you Win the Game"
-  string2 = "#{player1.name} you Win the Game"
+  string2 = "#{player2.name} you Win the Game"
 
   system 'clear'
   puts grid
