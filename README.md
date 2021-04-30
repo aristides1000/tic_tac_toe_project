@@ -1,16 +1,16 @@
-![](https://img.shields.io/badge/-Ruby-rgb(199%2C%2032%2C%2039)?style=plastic&logo=ruby)
+![](<https://img.shields.io/badge/-Ruby-rgb(199%2C%2032%2C%2039)?style=plastic&logo=ruby>)
 
 # Project - Tic Tac Toe
 
 > The purpose of this project is to consolidate the acquired knowledge of the Ruby programming language. For this, we decided to develop a Video Game development project called Tic Tac Toe, in order to learn the correct operation of Object Oriented Programming.
-![screenshot](./app_screenshot.png)
+> ![screenshot](./app_screenshot.png)
 
 This web page was the third Ruby Programming Language Project of the Microverse curriculum.
 In this project, we learned the importance of Object Oriented Programming in programming languages and how Ruby can help us accomplish this task.
 
 ## Built With
 
-![](https://img.shields.io/badge/-Ruby-rgb(199%2C%2032%2C%2039)?style=plastic&logo=ruby)
+![](<https://img.shields.io/badge/-Ruby-rgb(199%2C%2032%2C%2039)?style=plastic&logo=ruby>)
 
 ## Live Demo
 
@@ -36,26 +36,31 @@ To get a local copy up and running follow these simple example steps:
 - If you have any questions or problems about how to run this project, you can leave me a comment in the [issues section](https://github.com/aristides1000/tic_tac_toe_project/issues) of this repository, I am more than willing to help you.
 
 ### Usage
+
 Run main.rb with [Ruby V.3.0.0](https://www.ruby-lang.org/es/downloads/).
 
 ### Run tests
+
 Linters errors
 
 ## Game Description
+
 Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner
 
 ## How to play
-1. The interface of this game will be your computer's terminal. Search terminal in your computer to open it.
-2. In the terminal, use the command `cd` to go to the place where you have saved/cloned the Tic Tac Toe repository. For example: Desktop/User/tic-tac-toe/. You may use the comand `ls` to see the files and repositories exitent in your current location.
-3. Now, use the comand `cd bin` again to enter the folder and execute `ruby main.rb` in the terminal to start the game.
+
+1. This game will take place in your computer's terminal. In order to open the terminal you only need to search for 'terminal' in your computer or hit "Ctrl + \`" or "Cmd + `" to open it.
+2. In the terminal, type `cd` to go to the game's folder where you cloned the Tic Tac Toe repository. For example: Desktop/User/tic-tac-toe/. You can also use the comand `ls` to see the files listed in the folder.
+3. Now, use the comand `ruby main.rb` in the terminal to start the game.
 4. Enjoy the game!
 
 ## Game rules
-1. Type the name of Player1, which will be signed to the symbol 'X';
-2. Type the name of Player2, which will be signed to the symbol 'O';
-3. Now the first player ('X') can select any space to insert the value, follow your number keyboard to compare the available spaces:
-4. Remember not to insert any invalid number (above 9) or repeat the same number that is already taken by a symbol (no cheating!!);
-5. The winner will be the first player/symbol to complete a sequence of a row, column, or diagonal.
+
+1. Type the name for Player1, and it will be assigned the symbol 'X';
+2. Type the name for Player1, and it will be assigned the symbol 'O';
+3. Now the first player can select any cell in the range of (1-9) to put his/her mark (X in this case)
+4. Remember to insert a valid number (from 1 to 9) and don't repeat any number that is already taken by a symbol;
+5. The first player to complete three marks in a row, column, or diagonal line will be the winner.
 
 ## Authors
 
