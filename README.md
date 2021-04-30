@@ -48,7 +48,7 @@ Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns 
 
 1. This game will take place in your computer's terminal. In order to open the terminal you only need to search for 'terminal' in your computer or hit "Ctrl + \`" or "Cmd + `" to open it.
 2. In the terminal, type `cd` to go to the game's folder where you cloned the Tic Tac Toe repository. For example: Desktop/User/tic-tac-toe/. You can also use the comand `ls` to see the files listed in the folder.
-3. Now, use the comand `ruby main.rb` in the terminal to start the game.
+3. Now, `cd` into `bin` folder by typying `cd bin` and executing the command `ruby main.rb` in the terminal to start the game. Or, you can just type `ruby bin/main.rb ` without change to `bin` directory.
 4. Enjoy the game!
 
 ## Game rules
